@@ -1,0 +1,27 @@
+{
+  "name": "dogecoin2.0-pricefeed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dogecoin-2-0/PriceFeed.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dogecoin-2-0/PriceFeed/issues"
+  },
+  "homepage": "https://github.com/Dogecoin-2-0/PriceFeed#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.0",
+    "dotenv": "^10.0.0"
+  }
+}

@@ -18,10 +18,8 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
-//
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
+const WalletProvider = require('@truffle/hdwallet-provider');
+require('dotenv').config();
 
 module.exports = {
   /**
@@ -71,6 +69,32 @@ module.exports = {
     // network_id: 2111,   // This network is yours, in the cloud.
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
+    binance_testnet: {
+      provider: () =>
+        new WalletProvider({
+          mnemonic: process.env.PRIVATE_KEY,
+          providerOrUrl:
+            'https://speedy-nodes-nyc.moralis.io/558120230227a848a2bb7043/bsc/testnet'
+        }),
+      network_id: 97,
+      confirmations: 2,
+      timeoutBlocks: 20000,
+      skipDryRun: true,
+      networkCheckTimeout: 20000
+    },
+    binance_mainnet: {
+      provider: () =>
+        new WalletProvider({
+          mnemonic: process.env.PRIVATE_KEY,
+          providerOrUrl:
+            'https://speedy-nodes-nyc.moralis.io/558120230227a848a2bb7043/bsc/mainnet'
+        }),
+      network_id: 56,
+      confirmations: 2,
+      timeoutBlocks: 20000,
+      skipDryRun: true,
+      networkCheckTimeout: 20000
+    }
   },
 
   // Set default mocha options here, use special reporters etc.

@@ -16,4 +16,9 @@ contract PriceFeed {
     (, int256 price, , , ) = _feed.latestRoundData();
     return price.toUint256();
   }
+
+  function getDecimals(address _base) external view returns (uint8) {
+    AggregatorV3Interface _feed = AggregatorV3Interface(_base);
+    return _feed.decimals();
+  }
 }

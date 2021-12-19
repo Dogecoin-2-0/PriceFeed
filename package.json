@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write **/**/*.{js,json,sol}"
+    "format": "prettier --write **/**/*.{js,json,sol}",
+    "deploy:kovan": "truffle migrate --network kovan"
   },
   "repository": {
     "type": "git",

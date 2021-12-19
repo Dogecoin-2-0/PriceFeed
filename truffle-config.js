@@ -72,7 +72,7 @@ module.exports = {
     binance_testnet: {
       provider: () =>
         new WalletProvider({
-          mnemonic: process.env.PRIVATE_KEY,
+          privateKeys: [process.env.PRIVATE_KEY],
           providerOrUrl:
             'https://speedy-nodes-nyc.moralis.io/558120230227a848a2bb7043/bsc/testnet'
         }),
@@ -85,11 +85,24 @@ module.exports = {
     binance_mainnet: {
       provider: () =>
         new WalletProvider({
-          mnemonic: process.env.PRIVATE_KEY,
+          privateKeys: [process.env.PRIVATE_KEY],
           providerOrUrl:
             'https://speedy-nodes-nyc.moralis.io/558120230227a848a2bb7043/bsc/mainnet'
         }),
       network_id: 56,
+      confirmations: 2,
+      timeoutBlocks: 20000,
+      skipDryRun: true,
+      networkCheckTimeout: 20000
+    },
+    kovan: {
+      provider: () =>
+        new WalletProvider({
+          privateKeys: [process.env.PRIVATE_KEY],
+          providerOrUrl:
+            'https://kovan.infura.io/v3/f9e72d0223644a4fa9a8807426b6dbef'
+        }),
+      network_id: 42,
       confirmations: 2,
       timeoutBlocks: 20000,
       skipDryRun: true,

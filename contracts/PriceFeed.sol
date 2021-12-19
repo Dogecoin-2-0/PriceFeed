@@ -9,8 +9,7 @@ contract PriceFeed {
   using SafeCast for int256;
   using SafeMath for uint256;
 
-  constructor() {
-  }
+  constructor() {}
 
   function fetchLatestPrice(address _base) external view returns (uint256) {
     AggregatorV3Interface _feed = AggregatorV3Interface(_base);
